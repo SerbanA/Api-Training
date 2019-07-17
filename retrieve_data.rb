@@ -20,6 +20,7 @@ puts uri.port # show used port => 443
 puts uri.path # shows the path => /Ws/InternalWebServices.asmx/GetLawyers
 http.use_ssl = true #Turn on/off SSL. This flag must be set before starting session
 response = http.post(uri.path, params.to_json, headers) # making a new post request using the path the parameters inside the json body and the header
+puts response.code # to check status code of the request
 output = response.body # saving the result inside the outut variable
 
 count  = 0
@@ -28,7 +29,7 @@ while count <= 61
  count +=1
 end
 
-#puts output.split # printing the output
+#puts output # printing the output
 =begin
 {"d":["",
     "",
