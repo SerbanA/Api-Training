@@ -26,4 +26,5 @@ puts resp.to_hash # shows the response from the get request
     "content-length"=>["30608"]}
 =end
 cookie = resp['set-cookie'] #stores the sessionID from the response in cookie variable
-puts cookie # shows the cookie => ASP.NET_SessionId=25tomewy2h4gbr1nypxext4p; path=/; HttpOnly
+puts cookie.split # shows the cookie => ASP.NET_SessionId=25tomewy2h4gbr1nypxext4p; path=/; HttpOnly
+puts cookie.split(";")[0] # shows the cookie and splits to see only the session id => ASP.NET_SessionId=er03cc0dhd1gv1vebn5h52h3
