@@ -12,7 +12,7 @@ headers = { # header parameters containing sessionID and json format
     'Content-Type' =>'application/json',
     'Accept'=>'application/json',
     'cookie' => 'ASP.NET_SessionId=pnyjosdmavmytyqhvci1i25b; path=/; HttpOnly'
-    }
+}
 
 http = Net::HTTP.new(uri.host, uri.port) #new http class 
 puts uri.host # show site host => www.ifep.ro
@@ -21,7 +21,14 @@ puts uri.path # shows the path => /Ws/InternalWebServices.asmx/GetLawyers
 http.use_ssl = true #Turn on/off SSL. This flag must be set before starting session
 response = http.post(uri.path, params.to_json, headers) # making a new post request using the path the parameters inside the json body and the header
 output = response.body # saving the result inside the outut variable
-puts output # printing the output
+
+count  = 0
+while count <= 61
+ puts output.split(/["]/)[count]
+ count +=1
+end
+
+#puts output.split # printing the output
 =begin
 {"d":["",
     "",
