@@ -1,9 +1,9 @@
 require 'uri'
 require 'net/http'
 require 'json'
-require_relative 'menu'
-require_relative 'site_parsing'
-require_relative 'cookie_fetching'
+require_relative 'Menu'
+require_relative 'Ifep'
+require_relative 'Cookie'
 
 params = {
     "prefixText": "",
@@ -19,7 +19,7 @@ exit = 0
 
 while exit == 0 do
     puts "Name:#{params["prefixText"]}  Number:#{params["count"]}"
-    headers["cookie"] = get_cookie(headers)
+    headers["cookie"] = Cookie.get_cookie(headers)
     main_menu
     option = gets.chomp
     case option
@@ -32,11 +32,14 @@ while exit == 0 do
             params["count"] = gets.to_i
             puts ""
         when "3"
-            name_and_id_fetching(params, headers)
+           
+            temp_output = Ifep.name_and_id_fetching(params, headers)
+            Ifep.name_and_id_displaying(temp_output, params)
             puts ""
         when "4"
             exit = 1
-        else puts "Invalid option"   
+        else puts "Invalid option"  
+            puts "" 
     end
 end
 
