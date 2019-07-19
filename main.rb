@@ -24,13 +24,16 @@ while exit == 0 do
     option = gets.chomp
     case option
         when "1" 
-            puts "Name:"
+            puts "Name or ID:"
             params["prefixText"] = gets.chomp
+            puts ""
         when "2"
-            puts "Number:"
+            puts "Number of people:"
             params["count"] = gets.to_i
+            puts ""
         when "3"
             name_and_id_fetching(params, headers)
+            puts ""
         when "4"
             exit = 1
         else puts "Invalid option"   

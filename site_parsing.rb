@@ -9,10 +9,11 @@ def name_and_id_fetching(params, headers)
     response = http.post(uri.path, params.to_json, headers)
     output = response.body
 
-    contor  = params["count"]
+    count  = params["count"]
     counter = 0
-    while counter <= (contor*2 + 1)
-        puts output.split(/[";]/)[counter]
+    while counter <= (count*2 + 1)
+        puts output.split('",')[counter]
      counter +=1
     end
+    puts output
 end

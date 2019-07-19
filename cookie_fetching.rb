@@ -6,5 +6,5 @@ def get_cookie(headers)
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
     resp = http.request_get(uri.path, headers)
-    cookie = resp['set-cookie']
+    resp['set-cookie']
 end
