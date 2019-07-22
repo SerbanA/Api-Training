@@ -1,6 +1,7 @@
 
 module Ifep
-    require 'ifep/Cookie'
-    require 'ifep/Lawyers'
-    require 'ifep/Filters'
-  end
+  require 'ifep/GetCookie'
+  require 'ifep/GetLawyers'
+  require 'ifep/DisplayLawyers'
+  require 'ifep/Filters'
+end
