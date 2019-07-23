@@ -1,6 +1,8 @@
 require 'uri'
 require 'net/http'
 require 'json'
+require 'simple_command'
+require_relative 'Filters'
 
 module Ifep
     def DisplayLawyers(output, params)

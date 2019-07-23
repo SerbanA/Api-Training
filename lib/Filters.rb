@@ -6,11 +6,5 @@ params = {
 headers = { 
     'Content-Type' =>'application/json',
     'Accept'=>'application/json',
-    'cookie' => '_gat=1'
+    'cookie' => 'AspxAutoDetectCookieSupport=1; path=/'
 }
-
-=begin
-headers["cookie"] = Cookie.get_cookie(headers)
-params["prefixText"] = gets.chomp
-params["count"] = gets.to_i
-=end

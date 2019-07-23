@@ -1,7 +1,7 @@
-
 module Ifep
-  require 'ifep/GetCookie'
-  require 'ifep/GetLawyers'
-  require 'ifep/DisplayLawyers'
-  require 'ifep/Filters'
+  require_relative 'lib/GetLawyers.rb'
+  require_relative 'lib/GetCookie'
+  require_relative 'lib/DisplayLawyers'
+  require_relative 'lib/Filters'
+  require_relative 'lib/GetCookie'
 end
