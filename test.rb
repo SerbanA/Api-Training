@@ -15,3 +15,10 @@ command = Ifep::Lawyers.call(headers, params)
 lawyers = command.result
 puts lawyers
 puts "FETCHING LAWYERS DONE"
+
+
+=begin
+command = Ifep::DisplayLawyers.call(lawyers, params)
+final = command.result
+puts final
+=end
