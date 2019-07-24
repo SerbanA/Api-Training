@@ -6,9 +6,12 @@ params = Ifep::Variables.class_variable_get( :@@params)
 command = Ifep::ObtainCookie.call(headers)
 cookie = command.result
 puts cookie
-puts "getting cookie DONE"
+puts "FETCHING SESSION-ID DONE"
 command = Ifep::UpdateCookie.call(cookie, headers)
-header = command.result
-puts header
-puts "updating cookie DONE"
-
+headers = command.result
+puts headers
+puts "UPDATING COOKIE WITH SESSION-ID DONE"
+command = Ifep::Lawyers.call(headers, params)
+lawyers = command.result
+puts lawyers
+puts "FETCHING LAWYERS DONE"

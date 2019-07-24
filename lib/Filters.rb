@@ -1,8 +1,8 @@
 module Ifep
   class Variables
         @@params = {
-            "prefixText": "",
-            "count": 0,
+            "prefixText": "ana",
+            "count": 30,
             "contextKey": "null"
         }
         @@headers = { 
