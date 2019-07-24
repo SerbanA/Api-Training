@@ -1,15 +1,19 @@
 module Ifep
   class Variables
-        @@params = {
+        def self.params  
+            {
             "prefixText": "ana",
             "count": 30,
             "contextKey": "null"
-        }
-        @@headers = { 
+            }
+        end
+        def self.headers  
+            { 
             'Content-Type' =>'application/json',
             'Accept'=>'application/json',
             'cookie' => '_gat=1'
-        }  
+            }  
+        end
     end
 end
 

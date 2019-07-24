@@ -1,7 +1,7 @@
 require_relative 'Ifep'
 
-headers = Ifep::Variables.class_variable_get( :@@headers)
-params = Ifep::Variables.class_variable_get( :@@params)
+headers = Ifep::Variables.headers
+params = Ifep::Variables.params
 
 command = Ifep::ObtainCookie.call(headers)
 cookie = command.result
