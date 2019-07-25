@@ -11,7 +11,7 @@ module Ifep
             { 
             'Content-Type' =>'application/json',
             'Accept'=>'application/json',
-            'cookie' => '_gat=1'
+            'cookie' => '_gat1_'
             }  
         end
     end

@@ -18,6 +18,7 @@ module Ifep
             http = Net::HTTP.new(uri.host, uri.port)
             http.use_ssl = true
             response = http.post(uri.path, @params.to_json, @headers)
+            puts   response.code #200 if OK, 401 if error processing request
             output = response.body
         end
     end

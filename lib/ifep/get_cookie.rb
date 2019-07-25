@@ -15,6 +15,7 @@ module Ifep
             http.use_ssl = true
             resp = http.request_get(uri.path, @headers)
             cookie = resp['set-cookie']
+            return [resp.code, cookie]
         end
     end
 end
