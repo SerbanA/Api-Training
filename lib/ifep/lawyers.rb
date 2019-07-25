@@ -27,6 +27,7 @@ module Ifep
 
         def error_message(response)
          "Error when fetching lawyers list.#{response.code}:#{JSON.parse(response.body)["Message"]}" 
+
         end
     end
 end

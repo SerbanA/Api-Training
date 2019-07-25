@@ -10,7 +10,7 @@ module Ifep
             @headers = headers
         end
         def call
-            uri = URI.parse("https://www.ifep.ro/Account/Login.aspx")
+            uri = URI.parse("https://www.ifep.ro/Aaccount/Login.aspx")
             http = Net::HTTP.new(uri.host, uri.port)
             http.use_ssl = true
             resp = http.request_get(uri.path, @headers)
@@ -23,7 +23,7 @@ module Ifep
         end
 
         def error_message(resp)
-            "Error when fetching session ID.#{resp.code}:#{JSON.parse(resp.body)}" 
+            "Error when fetching session ID.#{resp.code}:#{(resp.body)}" 
         end
     end
 end
