@@ -14,8 +14,16 @@ module Ifep
             http = Net::HTTP.new(uri.host, uri.port)
             http.use_ssl = true
             resp = http.request_get(uri.path, @headers)
-            cookie = resp['set-cookie']
-            return [resp.code, cookie]
+            status = resp.code
+            puts status
+            return resp['set-cookie'] if status == "200" 
+
+            errors.add(:fetch_cookie,  error_message(resp))
+            nil            
+        end
+
+        def error_message(resp)
+            "Error when fetching session ID.#{resp.code}:#{JSON.parse(resp.body)}" 
         end
     end
 end

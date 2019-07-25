@@ -14,12 +14,19 @@ module Ifep
         end
 
         def call
-            uri = URI.parse("https://www.ifep.ro/Ws/InternalWebServices.asmx/GetLawyers")
+            uri = URI.parse("https://www.ifep.ro/Ws/adaswqInternalWebServices.asmx/GetLawyers")
             http = Net::HTTP.new(uri.host, uri.port)
             http.use_ssl = true
             response = http.post(uri.path, @params.to_json, @headers)
-            puts   response.code #200 if OK, 401 if error processing request
-            output = response.body
+            status = response.code
+            response.body if status == "200"
+
+            errors.add(:fetch_lawyers, error_message(response))
+            nil
+        end
+
+        def error_message(response)
+         "Error when fetching lawyers list.#{response.code}:#{JSON.parse(response.body)["Message"]}" 
         end
     end
 end
