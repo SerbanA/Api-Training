@@ -10,7 +10,7 @@ module Ifep
             @headers = headers
         end
         def call
-            uri = URI.parse("https://www.ifep.ro/Aaccount/Login.aspx")
+            uri = URI.parse("https://www.ifep.ro/Account/Login.aspx")
             http = Net::HTTP.new(uri.host, uri.port)
             http.use_ssl = true
             resp = http.request_get(uri.path, @headers)
