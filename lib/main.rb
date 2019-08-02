@@ -1,7 +1,8 @@
 require_relative 'ifep'
 headers = Ifep::Variables.headers
 params = Ifep::Variables.params
-
+temp = Ifep::Variables.form
+body = temp["body"]
 def updating_cookie(cookie,headers)
     headers['cookie'] = cookie
     headers
@@ -13,7 +14,7 @@ if command.success?
     cookie = command.result #session id
     headers = updating_cookie(cookie,headers)
     puts "COMMENCING DATA FETCHING"
-    command = Ifep::Lawyers.call(headers, params)
+    command = Ifep::Lawyers.call(headers, body)
     if command.success?
      lawyers = command.result 
      puts lawyers
