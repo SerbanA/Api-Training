@@ -3,7 +3,7 @@ module Ifep
         def self.params  
             {
             "prefixText": "ana",
-            "count": 10,
+            "count": 30,
             "contextKey": "null"
             }
         end

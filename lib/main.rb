@@ -15,11 +15,10 @@ if command.success?
     puts "COMMENCING DATA FETCHING"
     command = Ifep::Lawyers.call(headers, params)
     if command.success?
-        lawyers = command.result 
-        puts lawyers
-        puts "FETCHING LAWYERS DONE"
-    else
-        puts command.errors[:fetch_lawyers]
+     lawyers = command.result 
+     puts lawyers
+     else
+     puts command.errors[:fetch_lawyers]
     end
 else
 puts command.errors[:fetch_cookie]
